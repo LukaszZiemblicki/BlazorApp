@@ -1,0 +1,22 @@
+﻿<select @onchange="UpdateCurrency">
+    @foreach(CurrencyType item in Enum.GetValues(typeof(CurrencyType)))
+    {
+        bool isSelected = (SelectedCurrency == item);
+        <option value="@((int)item)" selected='@isSelected'>@item.ToString()</option>
+    }
+</select>
+
+@code
+{
+    [Parameter]
+    public CurrencyType SelectedCurrency { get; set; }
+
+    [Parameter] 
+    public EventCallback<CurrencyType> SelectedCurrencyChanged { get; set; }
+
+    protected async void UpdateCurrency(ChangeEventArgs currencyEvent)
+    {
+        SelectedCurrency = (CurrencyType)Convert.ToInt32(currencyEvent.Value);
+        await SelectedCurrencyChanged.InvokeAsync(SelectedCurrency);
+    }
+}

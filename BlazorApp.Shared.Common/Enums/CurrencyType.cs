@@ -1,0 +1,41 @@
+﻿namespace BlazorApp.Shared.Common.Enums
+{
+    public enum CurrencyType
+    {
+        THB = 10,
+        USD = 20,
+        AUD = 30,
+        HKD = 40,
+        CAD = 50,
+        NZD = 60,
+        SGD = 70,
+        EUR = 80,
+        HUF = 90,
+        CHF = 100,
+        GBP = 110,
+        UAH = 120,
+        JPY = 130,
+        CZK = 140,
+        DKK = 150,
+        ISK = 160,
+        NOK = 170,
+        SEK = 180,
+        HRK = 190,
+        RON = 200,
+        BGN = 210,
+        TRY = 220,
+        ILS = 230,
+        CLP = 240,
+        PHP = 250,
+        MXN = 260,
+        ZAR = 270,
+        BRL = 280,
+        MYR = 290,
+        RUB = 300,
+        IDR = 310,
+        INR = 320,
+        KRW = 330,
+        CNY = 340,
+        XDR = 350
+    }
+}

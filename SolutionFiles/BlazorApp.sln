@@ -1,0 +1,31 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Interface.Web", "..\BlazorApp.Interface.Web\BlazorApp.Interface.Web.csproj", "{57E038C4-D5D2-48CD-9C45-1B90EA67767F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Interface.API", "..\BlazorApp.Interface.API\BlazorApp.Interface.API.csproj", "{A53FFF3A-639A-477B-A429-B0D415F033D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp.Shared.Common", "..\BlazorApp.Shared.Common\BlazorApp.Shared.Common.csproj", "{E0428032-1942-4805-9B5E-06353B4D8057}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57E038C4-D5D2-48CD-9C45-1B90EA67767F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E038C4-D5D2-48CD-9C45-1B90EA67767F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E038C4-D5D2-48CD-9C45-1B90EA67767F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E038C4-D5D2-48CD-9C45-1B90EA67767F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A53FFF3A-639A-477B-A429-B0D415F033D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A53FFF3A-639A-477B-A429-B0D415F033D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A53FFF3A-639A-477B-A429-B0D415F033D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A53FFF3A-639A-477B-A429-B0D415F033D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0428032-1942-4805-9B5E-06353B4D8057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0428032-1942-4805-9B5E-06353B4D8057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0428032-1942-4805-9B5E-06353B4D8057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0428032-1942-4805-9B5E-06353B4D8057}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

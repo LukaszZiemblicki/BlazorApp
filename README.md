@@ -1,1 +1,1 @@
-# BlazorApp
+# BlazorWebApp

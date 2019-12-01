@@ -1,0 +1,77 @@
+﻿@page "/exchangeRateAlert"
+@inject ExchangeRateAlertPageViewModel ViewModel
+
+<h1>Exchange Rate Alerts</h1>
+
+
+<h2>Alerts list</h2>
+
+@if(this.ViewModel.Model!=null && this.ViewModel.Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Currency</th>
+                <th scope="col">Value</th>
+                <th scope="col">Comment</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(int i=0;i<this.ViewModel.Model.Count;i++)
+            {
+                var item = this.ViewModel.Model[i];
+                <tr>
+                    <th scope="row">
+                        @i
+                    </th>
+                    <td>
+                        <CurrencyDropDown @bind-SelectedCurrency="item.Currency" />
+                    </td>
+                    <td>
+                        <input type="text" @bind-value="@item.Value" required />
+                    </td>
+                    <td>
+                        <input type="text" @bind-value="@item.Comment" />
+                    </td>
+                    <td>
+                        <button @onclick="@(async e => await this.ViewModel.UpdateAsync(item))">
+                            Save
+                        </button>
+                        <button @onclick="@(async e => await this.ViewModel.DeleteAsync(item.ID))">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h2>Create new alert</h2>
+<EditForm OnValidSubmit="Submit" Model="this.ViewModel.ItemToCreate">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <CurrencyDropDown @bind-SelectedCurrency="this.ViewModel.ItemToCreate.Currency" />
+    <input type="text" @bind-value="this.ViewModel.ItemToCreate.Value" placeholder="enter value" />
+    <input type="text" @bind-value="this.ViewModel.ItemToCreate.Comment" placeholder="enter comment" />
+
+    <button type="submit" class="btn btn-primary">
+        Create alert
+    </button>
+</EditForm>
+
+@code
+{
+    protected override async Task OnParametersSetAsync()
+    {
+        await this.ViewModel.LoadAsync();
+    }
+
+    private async Task Submit()
+    {
+        await this.ViewModel.CreateAsync();
+    }
+}

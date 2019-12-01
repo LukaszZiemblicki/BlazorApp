@@ -1,0 +1,25 @@
+﻿@page "/exchangeRate"
+@inject ExchangeRatePageViewModel ViewModel
+
+<h1>Exchange Rate List</h1>
+
+@if(!string.IsNullOrEmpty(this.ViewModel.Model?.ID))
+{
+    <h2>ID: @this.ViewModel.Model.ID</h2>
+    <h3>Date: @this.ViewModel.Model.Date</h3>
+
+    <ul>
+        @foreach(var exchangeItem in this.ViewModel.Model.Items)
+        {
+            <li>@($"{exchangeItem.Currency} ({exchangeItem.Code}): {exchangeItem.Value} PLN")</li>
+        }
+    </ul>
+}
+
+@code
+{
+    protected override async Task OnParametersSetAsync()
+    {
+        await this.ViewModel.LoadAsync();
+    }
+}
